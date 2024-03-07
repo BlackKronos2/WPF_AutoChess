@@ -1,0 +1,32 @@
+﻿<Window x:Class="AutoChessWPF.GameScence"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AutoChessWPF"
+        mc:Ignorable="d"
+        Title="Игра" Height="619" Width="908" ResizeMode="NoResize" MouseDown="Window_MouseDown" Closed="Window_Closed">
+    <Grid>
+        <Canvas x:FieldModifier="public" x:Name="FightGrid" Margin="184,69,184,153" Background="#FFD2D2D2" Width="540" Height="360" MouseUp="FightGrid_MouseDown"/>
+        <Button x:Name="FightStartButton" Content="Начать Бой" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Height="36" Width="144" Click="FightStartButton_Click"/>
+        <Canvas x:FieldModifier="public" x:Name="Player1Hand" Margin="35,95,813,127" Background="#FFD2D2D2" MouseUp="Player1Hand_MouseDown" Height="360" Width="60"/>
+        <Canvas x:FieldModifier="public" x:Name="Player2Hand" Margin="0,95,35,127" Background="#FFD2D2D2" MouseUp="Player2Hand_MouseDown" Height="360" Width="60" HorizontalAlignment="Right"/>
+
+        <Grid x:Name="SelectedUnitInfoPanel" Margin="184,434,184,0" Background="WhiteSmoke">
+            <Canvas x:Name="SelectedUnitImage" Width="165" Background="WhiteSmoke"/>
+            <TextBox HorizontalAlignment="Center" Text="{Binding Path=SelectedUnitName}" Margin="0,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextAlignment="Center" IsReadOnly="True"/>
+            <Label Content="{Binding Path=SelectedUnitAttack}" HorizontalAlignment="Left" Margin="70,17,0,0" VerticalAlignment="Top"/>
+            <Label Content="{Binding Path=SelectedUnitRange}" HorizontalAlignment="Left" Margin="70,51,0,0" VerticalAlignment="Top"/>
+            <Label Content="{Binding Path=SelectedUnitHealth}" HorizontalAlignment="Left" Margin="70,82,0,0" VerticalAlignment="Top"/>
+            <Label Content="{Binding Path=SelectedUnitPrice}" HorizontalAlignment="Left" Margin="385,17,0,0" VerticalAlignment="Top"/>
+
+        </Grid>
+        <Label Content="Игрок 1" HorizontalAlignment="Left" Margin="20,-2,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Label x:Name="Player1HPText" Content="{Binding Path=Player1Health}" HorizontalAlignment="Left" Margin="20,32,0,0" VerticalAlignment="Top" FontSize="15"/>
+        <Label x:Name="Player1ManaText" Content="{Binding Path=Player1Mana}" HorizontalAlignment="Left" Margin="20,47,0,0" VerticalAlignment="Top" FontSize="15"/>
+
+        <Label Content="Игрок 2" HorizontalAlignment="Right" Margin="0,-2,37,0" VerticalAlignment="Top" FontSize="18"/>
+        <Label x:Name="Player2HPText" Content="{Binding Path=Player2Health}" HorizontalAlignment="Right" Margin="0,32,37,0" VerticalAlignment="Top" FontSize="15"/>
+        <Label x:Name="Player2ManaText" Content="{Binding Path=Player2Mana}" HorizontalAlignment="Right" Margin="0,47,37,0" VerticalAlignment="Top" FontSize="15"/>
+    </Grid>
+</Window>
