@@ -142,7 +142,7 @@ namespace AutoChessWPF {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/AutoChessWPF;component/view/gamescence.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/AutoChessWPF;V1.0.0.0;component/view/gamescence.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\View\GameScence.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
